@@ -6,8 +6,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_idle_right',
     frames: anims.generateFrameNames('nancy', {
-      start: 0,
-      end: 5,
+      start: 16,
+      end: 23,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -16,8 +16,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_idle_up',
     frames: anims.generateFrameNames('nancy', {
-      start: 6,
-      end: 11,
+      start: 8,
+      end: 15,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -26,8 +26,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_idle_left',
     frames: anims.generateFrameNames('nancy', {
-      start: 12,
-      end: 17,
+      start: 24,
+      end: 29,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -36,8 +36,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_idle_down',
     frames: anims.generateFrameNames('nancy', {
-      start: 18,
-      end: 23,
+      start: 0,
+      end: 7,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -46,8 +46,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_run_right',
     frames: anims.generateFrameNames('nancy', {
-      start: 24,
-      end: 29,
+      start: 48,
+      end: 52,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -56,8 +56,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_run_up',
     frames: anims.generateFrameNames('nancy', {
-      start: 30,
-      end: 35,
+      start: 40,
+      end: 44,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -66,8 +66,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_run_left',
     frames: anims.generateFrameNames('nancy', {
-      start: 36,
-      end: 41,
+      start: 56,
+      end: 60,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -76,8 +76,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_run_down',
     frames: anims.generateFrameNames('nancy', {
-      start: 42,
-      end: 47,
+      start: 32,
+      end: 36,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -86,8 +86,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_down',
     frames: anims.generateFrameNames('nancy', {
-      start: 48,
-      end: 48,
+      start: 36,
+      end: 36,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -96,8 +96,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_left',
     frames: anims.generateFrameNames('nancy', {
-      start: 49,
-      end: 49,
+      start: 37,
+      end: 37,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -106,8 +106,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_right',
     frames: anims.generateFrameNames('nancy', {
-      start: 50,
-      end: 50,
+      start: 38,
+      end: 38,
     }),
     repeat: 0,
     frameRate: animsFrameRate,

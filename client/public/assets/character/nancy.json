@@ -50,54 +50,6 @@
 },
 {
 	"filename": "Nancy_idle_anim_7.png",
-	"frame": {"x":0,"y":0,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "Nancy_idle_anim_8.png",
-	"frame": {"x":32,"y":0,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "Nancy_idle_anim_9.png",
-	"frame": {"x":64,"y":0,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "Nancy_idle_anim_10.png",
-	"frame": {"x":96,"y":0,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "Nancy_idle_anim_11.png",
-	"frame": {"x":128,"y":0,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "Nancy_idle_anim_12.png",
-	"frame": {"x":160,"y":0,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "Nancy_idle_anim_13.png",
 	"frame": {"x":0,"y":32,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -105,7 +57,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_14.png",
+	"filename": "Nancy_idle_anim_8.png",
 	"frame": {"x":32,"y":32,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -113,7 +65,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_15.png",
+	"filename": "Nancy_idle_anim_9.png",
 	"frame": {"x":64,"y":32,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -121,7 +73,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_16.png",
+	"filename": "Nancy_idle_anim_10.png",
 	"frame": {"x":96,"y":32,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -129,7 +81,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_17.png",
+	"filename": "Nancy_idle_anim_11.png",
 	"frame": {"x":128,"y":32,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -137,7 +89,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_18.png",
+	"filename": "Nancy_idle_anim_12.png",
 	"frame": {"x":160,"y":32,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -145,7 +97,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_19.png",
+	"filename": "Nancy_idle_anim_13.png",
 	"frame": {"x":0,"y":96,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -153,7 +105,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_20.png",
+	"filename": "Nancy_idle_anim_14.png",
 	"frame": {"x":32,"y":96,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -161,7 +113,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_21.png",
+	"filename": "Nancy_idle_anim_15.png",
 	"frame": {"x":64,"y":96,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -169,7 +121,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_22.png",
+	"filename": "Nancy_idle_anim_16.png",
 	"frame": {"x":96,"y":96,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -177,7 +129,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_23.png",
+	"filename": "Nancy_idle_anim_17.png",
 	"frame": {"x":128,"y":96,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -185,8 +137,56 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Nancy_idle_anim_24.png",
+	"filename": "Nancy_idle_anim_18.png",
 	"frame": {"x":160,"y":96,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Nancy_idle_anim_19.png",
+	"frame": {"x":0,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Nancy_idle_anim_20.png",
+	"frame": {"x":32,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Nancy_idle_anim_21.png",
+	"frame": {"x":64,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Nancy_idle_anim_22.png",
+	"frame": {"x":96,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Nancy_idle_anim_23.png",
+	"frame": {"x":128,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Nancy_idle_anim_24.png",
+	"frame": {"x":160,"y":0,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
