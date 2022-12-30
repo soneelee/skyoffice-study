@@ -86,8 +86,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_down',
     frames: anims.generateFrameNames('nancy', {
-      start: 36,
-      end: 36,
+      start: 128,
+      end: 128,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -96,8 +96,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_left',
     frames: anims.generateFrameNames('nancy', {
-      start: 37,
-      end: 37,
+      start: 129,
+      end: 129,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -106,8 +106,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_right',
     frames: anims.generateFrameNames('nancy', {
-      start: 38,
-      end: 38,
+      start: 130,
+      end: 130,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -116,8 +116,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'nancy_sit_up',
     frames: anims.generateFrameNames('nancy', {
-      start: 51,
-      end: 51,
+      start: 131,
+      end: 131,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
