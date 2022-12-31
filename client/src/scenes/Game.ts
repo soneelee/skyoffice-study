@@ -81,17 +81,17 @@ export default class Game extends Phaser.Scene {
 
     const BuildingImage = this.map.addTilesetImage('buildings', 'buildings')
 
-    const RoadImage = this.map.addTilesetImage('road', 'road')
+    // const RoadImage = this.map.addTilesetImage('road', 'road')
 
     console.log('GroundImage 불러왔다', GroundImage)
 
     const GroundLayer = this.map.createLayer('grass', GroundImage)
-    const RoadLayer = this.map.createLayer('road', RoadImage)
+    // const RoadLayer = this.map.createLayer('road', RoadImage)
     const BuildingLayer = this.map.createLayer('buildings', BuildingImage)
 
     console.log('GroundLayer 만들었다', GroundLayer)
     console.log('BuildingLayer 만들었다', BuildingLayer)
-    console.log('RoadLayer 만들었다', RoadLayer)
+    // console.log('RoadLayer 만들었다', RoadLayer)
 
     // if (groundLayer) {
     //   groundLayer.setCollisionByProperty({ collides: true })

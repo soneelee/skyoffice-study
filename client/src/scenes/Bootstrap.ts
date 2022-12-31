@@ -34,6 +34,7 @@ export default class Bootstrap extends Phaser.Scene {
     // })
 
     this.load.tilemapTiledJSON('tilemap', 'assets/map/game_map.json')
+
     this.load.spritesheet('tiles_wall', 'assets/map/tiles.png', {
       frameWidth: 16,
       frameHeight: 16,
@@ -42,10 +43,10 @@ export default class Bootstrap extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     })
-    this.load.spritesheet('road', 'assets/map/tiles.png', {
-      frameWidth: 16,
-      frameHeight: 16,
-    })
+    // this.load.spritesheet('road', 'assets/map/tiles.png', {
+    //   frameWidth: 16,
+    //   frameHeight: 16,
+    // })
 
     this.load.spritesheet('chairs', 'assets/items/chair.png', {
       frameWidth: 32,
