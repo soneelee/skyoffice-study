@@ -81,7 +81,7 @@ export default class Game extends Phaser.Scene {
 
     console.log('GroundImage 불러왔다', GroundImage)
 
-    const groundLayer = this.map.createLayer('grass', [GroundImage])
+    const groundLayer = this.map.createLayer(' ', GroundImage)
     console.log('groundLayer 만들었다', groundLayer)
 
     // if (groundLayer) {

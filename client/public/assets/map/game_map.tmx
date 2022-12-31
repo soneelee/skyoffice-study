@@ -4,7 +4,7 @@
   <image source="tiles.png" width="720" height="1072"/>
  </tileset>
  <tileset firstgid="3016" name="buildings" tilewidth="16" tileheight="16" tilecount="5472" columns="72">
-  <image source="buildings_all.png" width="1152" height="1216"/>
+  <image source="buildings.png" width="1152" height="1216"/>
  </tileset>
  <tileset firstgid="8488" name="trains" tilewidth="16" tileheight="16" tilecount="3360" columns="84">
   <image source="train.png" width="1344" height="640"/>
