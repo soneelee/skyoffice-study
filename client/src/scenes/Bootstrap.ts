@@ -33,7 +33,7 @@ export default class Bootstrap extends Phaser.Scene {
     //   frameHeight: 32,
     // })
 
-    this.load.tilemapTiledJSON('tilemap', 'assets/map/map31.json')
+    this.load.tilemapTiledJSON('tilemap', 'assets/map/game_map.json')
     this.load.spritesheet('tiles_wall', 'assets/map/tiles.png', {
       frameWidth: 16,
       frameHeight: 16,
