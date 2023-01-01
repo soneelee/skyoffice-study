@@ -16,6 +16,7 @@ app.use(cors())
 app.use(express.json())
 // app.use(express.static('dist'))
 
+let userCnt = 0
 
 app.post('/api/post/increase_user_cnt', (req, res) => {
   userCnt += 1
