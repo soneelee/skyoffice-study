@@ -21,6 +21,7 @@ import {
 } from '../stores/ChatStore'
 import { setWhiteboardUrls } from '../stores/WhiteboardStore'
 import { response } from 'express'
+import { increaseUserCnt } from '../stores/UserCntReducer'
 
 export default class Network {
   private client: Client
@@ -101,7 +102,12 @@ export default class Network {
 
     // new instance added to the players MapSchema
     this.room.state.players.onAdd = (player: IPlayer, key: string) => {
-      if (key === this.mySessionId) return
+      // if (key === this.mySessionId) return
+
+      // postData('http://localhost:2567/api/post/user_cnt', { diff: 1 }).then((data) => {
+      //   console.log(data) // JSON 데이터가 `data.json()` 호출에 의해 파싱됨
+      // })
+      store.dispatch(increaseUserCnt())
 
       // track changes on every child object inside the players MapSchema
       player.onChange = (changes) => {
@@ -119,6 +125,24 @@ export default class Network {
       }
     }
 
+    // POST 메서드 구현 예제
+    async function postData(url = '', data = {}) {
+      // 옵션 기본 값은 *로 강조
+      const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE 등
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        headers: {
+          'Content-Type': 'application/json',
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data), // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
+      })
+      return response.json() // JSON 응답을 네이티브 JavaScript 객체로 파싱
+    }
+
     // an instance removed from the players MapSchema
     this.room.state.players.onRemove = (player: IPlayer, key: string) => {
       phaserEvents.emit(Event.PLAYER_LEFT, key)
@@ -126,6 +150,12 @@ export default class Network {
       this.webRTC?.deleteOnCalledVideoStream(key)
       store.dispatch(pushPlayerLeftMessage(player.name))
       store.dispatch(removePlayerNameMap(key))
+
+      return () => {
+        postData('http://localhost:2567/api/post/user_cnt', { diff: -1 }).then((data) => {
+          console.log(data) // JSON 데이터가 `data.json()` 호출에 의해 파싱됨
+        })
+      }
     }
 
     // new instance added to the computers MapSchema
@@ -248,28 +278,6 @@ export default class Network {
     console.log('연결중')
     this.room?.send(Message.READY_TO_CONNECT)
     phaserEvents.emit(Event.MY_PLAYER_READY)
-
-    // POST 메서드 구현 예제
-    async function postData(url = '', data = {}) {
-      // 옵션 기본 값은 *로 강조
-      const response = await fetch(url, {
-        method: 'POST', // *GET, POST, PUT, DELETE 등
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(data), // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
-      })
-      return response.json() // JSON 응답을 네이티브 JavaScript 객체로 파싱
-    }
-
-    postData('http://localhost:2567/api/post/user_cnt', { diff: 1 }).then((data) => {
-      console.log(data) // JSON 데이터가 `data.json()` 호출에 의해 파싱됨
-    })
   }
 
   // method to send ready-to-connect signal to Colyseus server
