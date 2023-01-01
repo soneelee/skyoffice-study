@@ -89,12 +89,12 @@ export default class Game extends Phaser.Scene {
     GroundLayer.setCollisionByProperty({ collisions: true })
     BuildingLayer.setCollisionByProperty({ collisions: true })
 
-    const debugGraphics = this.add.graphics().setAlpha(0.7)
-    GroundLayer.renderDebug(debugGraphics, {
-      tileColor: null, // Color of non-colliding tiles
-      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-      faceColor: new Phaser.Display.Color(40, 39, 37, 255), // Color of colliding face edges
-    })
+    // const debugGraphics = this.add.graphics().setAlpha(0.7)
+    // GroundLayer.renderDebug(debugGraphics, {
+    //   tileColor: null, // Color of non-colliding tiles
+    //   collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+    //   faceColor: new Phaser.Display.Color(40, 39, 37, 255), // Color of colliding face edges
+    // })
 
     this.myPlayer = this.add.myPlayer(705, 500, 'adam', this.network.mySessionId)
     this.playerSelector = new PlayerSelector(this, 0, 0, 16, 16)
