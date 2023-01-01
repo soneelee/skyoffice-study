@@ -179,19 +179,19 @@ export default function RoomSelectionDialog() {
             </CustomRoomWrapper>
           ) : (
             <>
-              <Title>Welcome to SkyOffice</Title>
+              <Title>o(*°▽°)ﾉ 맘스타운에 오신 것을 환영합니다</Title>
               <Content>
                 <img src={logo} alt="logo" />
                 <Button variant="contained" color="secondary" onClick={handleConnect}>
-                  Connect to public lobby
+                  맘스타운 입장할래요
                 </Button>
-                <Button
+                {/* <Button
                   variant="outlined"
                   color="secondary"
                   onClick={() => (lobbyJoined ? setShowCustomRoom(true) : setShowSnackbar(true))}
                 >
                   Create/find custom rooms
-                </Button>
+                </Button> */}
               </Content>
             </>
           )}
