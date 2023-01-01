@@ -76,81 +76,84 @@ export default class Game extends Phaser.Scene {
     createCharacterAnims(this.anims)
 
     this.map = this.make.tilemap({ key: 'tilemap' })
-    const FloorAndGround = this.map.addTilesetImage('FloorAndGround', 'tiles_wall')
 
-    const groundLayer = this.map.createLayer('Ground', FloorAndGround)
-    groundLayer.setCollisionByProperty({ collides: true })
+    const GroundImage = this.map.addTilesetImage('tiles', 'tiles_wall')
+
+    const BuildingImage = this.map.addTilesetImage('buildings', 'buildings')
 
     // debugDraw(groundLayer, this)
+    const GroundLayer = this.map.createLayer('grass', GroundImage)
+
+    const BuildingLayer = this.map.createLayer('buildings', BuildingImage)
 
     this.myPlayer = this.add.myPlayer(705, 500, 'adam', this.network.mySessionId)
     this.playerSelector = new PlayerSelector(this, 0, 0, 16, 16)
 
     // import chair objects from Tiled map to Phaser
-    const chairs = this.physics.add.staticGroup({ classType: Chair })
-    const chairLayer = this.map.getObjectLayer('Chair')
-    chairLayer.objects.forEach((chairObj) => {
-      const item = this.addObjectFromTiled(chairs, chairObj, 'chairs', 'chair') as Chair
-      // custom properties[0] is the object direction specified in Tiled
-      item.itemDirection = chairObj.properties[0].value
-    })
+    // const chairs = this.physics.add.staticGroup({ classType: Chair })
+    // const chairLayer = this.map.getObjectLayer('Chair')
+    // chairLayer.objects.forEach((chairObj) => {
+    //   const item = this.addObjectFromTiled(chairs, chairObj, 'chairs', 'chair') as Chair
+    //   // custom properties[0] is the object direction specified in Tiled
+    //   item.itemDirection = chairObj.properties[0].value
+    // })
 
     // import computers objects from Tiled map to Phaser
-    const computers = this.physics.add.staticGroup({ classType: Computer })
-    const computerLayer = this.map.getObjectLayer('Computer')
-    computerLayer.objects.forEach((obj, i) => {
-      const item = this.addObjectFromTiled(computers, obj, 'computers', 'computer') as Computer
-      item.setDepth(item.y + item.height * 0.27)
-      const id = `${i}`
-      item.id = id
-      this.computerMap.set(id, item)
-    })
+    // const computers = this.physics.add.staticGroup({ classType: Computer })
+    // const computerLayer = this.map.getObjectLayer('Computer')
+    // computerLayer.objects.forEach((obj, i) => {
+    //   const item = this.addObjectFromTiled(computers, obj, 'computers', 'computer') as Computer
+    //   item.setDepth(item.y + item.height * 0.27)
+    //   const id = `${i}`
+    //   item.id = id
+    //   this.computerMap.set(id, item)
+    // })
 
-    // import whiteboards objects from Tiled map to Phaser
-    const whiteboards = this.physics.add.staticGroup({ classType: Whiteboard })
-    const whiteboardLayer = this.map.getObjectLayer('Whiteboard')
-    whiteboardLayer.objects.forEach((obj, i) => {
-      const item = this.addObjectFromTiled(
-        whiteboards,
-        obj,
-        'whiteboards',
-        'whiteboard'
-      ) as Whiteboard
-      const id = `${i}`
-      item.id = id
-      this.whiteboardMap.set(id, item)
-    })
+    // // import whiteboards objects from Tiled map to Phaser
+    // const whiteboards = this.physics.add.staticGroup({ classType: Whiteboard })
+    // const whiteboardLayer = this.map.getObjectLayer('Whiteboard')
+    // whiteboardLayer.objects.forEach((obj, i) => {
+    //   const item = this.addObjectFromTiled(
+    //     whiteboards,
+    //     obj,
+    //     'whiteboards',
+    //     'whiteboard'
+    //   ) as Whiteboard
+    //   const id = `${i}`
+    //   item.id = id
+    //   this.whiteboardMap.set(id, item)
+    // })
 
-    // import vending machine objects from Tiled map to Phaser
-    const vendingMachines = this.physics.add.staticGroup({ classType: VendingMachine })
-    const vendingMachineLayer = this.map.getObjectLayer('VendingMachine')
-    vendingMachineLayer.objects.forEach((obj, i) => {
-      this.addObjectFromTiled(vendingMachines, obj, 'vendingmachines', 'vendingmachine')
-    })
+    // // import vending machine objects from Tiled map to Phaser
+    // const vendingMachines = this.physics.add.staticGroup({ classType: VendingMachine })
+    // const vendingMachineLayer = this.map.getObjectLayer('VendingMachine')
+    // vendingMachineLayer.objects.forEach((obj, i) => {
+    //   this.addObjectFromTiled(vendingMachines, obj, 'vendingmachines', 'vendingmachine')
+    // })
 
     // import other objects from Tiled map to Phaser
-    this.addGroupFromTiled('Wall', 'tiles_wall', 'FloorAndGround', false)
-    this.addGroupFromTiled('Objects', 'office', 'Modern_Office_Black_Shadow', false)
-    this.addGroupFromTiled('ObjectsOnCollide', 'office', 'Modern_Office_Black_Shadow', true)
-    this.addGroupFromTiled('GenericObjects', 'generic', 'Generic', false)
-    this.addGroupFromTiled('GenericObjectsOnCollide', 'generic', 'Generic', true)
-    this.addGroupFromTiled('Basement', 'basement', 'Basement', true)
+    // this.addGroupFromTiled('Wall', 'tiles_wall', 'FloorAndGround', false)
+    // this.addGroupFromTiled('Objects', 'office', 'Modern_Office_Black_Shadow', false)
+    // this.addGroupFromTiled('ObjectsOnCollide', 'office', 'Modern_Office_Black_Shadow', true)
+    // this.addGroupFromTiled('GenericObjects', 'generic', 'Generic', false)
+    // this.addGroupFromTiled('GenericObjectsOnCollide', 'generic', 'Generic', true)
+    // this.addGroupFromTiled('Basement', 'basement', 'Basement', true)
 
     this.otherPlayers = this.physics.add.group({ classType: OtherPlayer })
 
     this.cameras.main.zoom = 1.5
     this.cameras.main.startFollow(this.myPlayer, true)
 
-    this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], groundLayer)
-    this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], vendingMachines)
+    // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], groundLayer)
+    // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], vendingMachines)
 
-    this.physics.add.overlap(
-      this.playerSelector,
-      [chairs, computers, whiteboards, vendingMachines],
-      this.handleItemSelectorOverlap,
-      undefined,
-      this
-    )
+    // this.physics.add.overlap(
+    //   this.playerSelector,
+    //   [chairs, computers, whiteboards, vendingMachines],
+    //   this.handleItemSelectorOverlap,
+    //   undefined,
+    //   this
+    // )
 
     this.physics.add.overlap(
       this.myPlayer,
