@@ -226,7 +226,7 @@ export default function Chat() {
         {showChat ? (
           <>
             <ChatHeader>
-              <h3>Chat</h3>
+              <h3>대화창</h3>
               <IconButton
                 aria-label="close dialog"
                 className="close"
@@ -262,7 +262,7 @@ export default function Chat() {
                 inputRef={inputRef}
                 autoFocus={focused}
                 fullWidth
-                placeholder="Press Enter to chat"
+                placeholder="대화를 입력해주세요"
                 value={inputValue}
                 onKeyDown={handleKeyDown}
                 onChange={handleChange}
