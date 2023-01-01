@@ -86,6 +86,16 @@ export default class Game extends Phaser.Scene {
 
     const BuildingLayer = this.map.createLayer('buildings', BuildingImage)
 
+    GroundLayer.setCollisionByProperty({ collisions: true })
+    BuildingLayer.setCollisionByProperty({ collisions: true })
+
+    const debugGraphics = this.add.graphics().setAlpha(0.7)
+    GroundLayer.renderDebug(debugGraphics, {
+      tileColor: null, // Color of non-colliding tiles
+      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+      faceColor: new Phaser.Display.Color(40, 39, 37, 255), // Color of colliding face edges
+    })
+
     this.myPlayer = this.add.myPlayer(705, 500, 'adam', this.network.mySessionId)
     this.playerSelector = new PlayerSelector(this, 0, 0, 16, 16)
 
@@ -144,8 +154,8 @@ export default class Game extends Phaser.Scene {
     this.cameras.main.zoom = 1.5
     this.cameras.main.startFollow(this.myPlayer, true)
 
-    // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], groundLayer)
-    // this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], vendingMachines)
+    this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], GroundLayer)
+    this.physics.add.collider([this.myPlayer, this.myPlayer.playerContainer], BuildingLayer)
 
     // this.physics.add.overlap(
     //   this.playerSelector,

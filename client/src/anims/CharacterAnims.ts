@@ -482,4 +482,7 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
     repeat: 0,
     frameRate: animsFrameRate,
   })
+  // add colliders
+  // this.anims.add.collider(this.playContainerBody, this.groundLayer)
+  // this.anims.add.collider(this.playContainerBody, this.BuildingLayer)
 }
