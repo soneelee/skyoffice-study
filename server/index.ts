@@ -18,18 +18,20 @@ app.use(express.json())
 
 let userCnt = 0 // TODO: DB 쿼리로 변경
 
-app.get('/api/post/add_user_cnt', (req, res) => {
-  console.log('add_user_cnt', userCnt)
-  userCnt += 1
+app.post('/api/post/user_cnt', (req, res) => {
+  const diff = req?.body?.diff || 0
+  userCnt += diff
+
+  console.log('set user_cnt', userCnt)
   res.status(200).json({
-    message: userCnt,
+    userCnt: userCnt,
   })
 })
 
-app.get('/api/get/get_user_cnt', (req, res) => {
+app.get('/api/get/user_cnt', (req, res) => {
   console.log('get_user_cnt', userCnt)
   res.status(200).json({
-    message: userCnt,
+    userCnt: userCnt,
   })
 })
 
