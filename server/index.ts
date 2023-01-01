@@ -16,6 +16,31 @@ app.use(cors())
 app.use(express.json())
 // app.use(express.static('dist'))
 
+
+app.post('/api/post/increase_user_cnt', (req, res) => {
+  userCnt += 1
+
+  console.log('set user_cnt', userCnt)
+  res.status(200).json({
+    userCnt: userCnt,
+  })
+})
+
+app.post('/api/post/decrease_user_cnt', (req, res) => {
+  userCnt -= 1
+
+  console.log('set user_cnt', userCnt)
+  res.status(200).json({
+    userCnt: userCnt,
+  })
+})
+
+app.get('/api/get/get_user_cnt', (req, res) => {
+  res.status(200).json({
+    userCnt: userCnt,
+  })
+})
+
 const server = http.createServer(app)
 const gameServer = new Server({
   server,
