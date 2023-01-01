@@ -311,17 +311,17 @@
   </tile>
   <tile id="1889">
    <properties>
-    <property name="collisions" type="bool" value="true"/>
+    <property name="collisions" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="1890">
    <properties>
-    <property name="collisions" type="bool" value="true"/>
+    <property name="collisions" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="1891">
    <properties>
-    <property name="collisions" type="bool" value="true"/>
+    <property name="collisions" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="1954">
@@ -361,17 +361,17 @@
   </tile>
   <tile id="1961">
    <properties>
-    <property name="collisions" type="bool" value="true"/>
+    <property name="collisions" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="1962">
    <properties>
-    <property name="collisions" type="bool" value="true"/>
+    <property name="collisions" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="1963">
    <properties>
-    <property name="collisions" type="bool" value="true"/>
+    <property name="collisions" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="2026">

@@ -693,7 +693,7 @@
                         {
                          "name":"collisions",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -702,7 +702,7 @@
                         {
                          "name":"collisions",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -711,7 +711,7 @@
                         {
                          "name":"collisions",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -783,7 +783,7 @@
                         {
                          "name":"collisions",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -792,7 +792,7 @@
                         {
                          "name":"collisions",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -801,7 +801,7 @@
                         {
                          "name":"collisions",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
