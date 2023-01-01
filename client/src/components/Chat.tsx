@@ -16,7 +16,7 @@ import Game from '../scenes/Game'
 
 import { getColorByString } from '../util'
 import { useAppDispatch, useAppSelector } from '../hooks'
-import { MessageType, setFocused, setShowChat } from '../stores/ChatStore'
+import { MessageType, setFocused, setShowChat} from '../stores/ChatStore'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -170,6 +170,7 @@ export default function Chat() {
   const focused = useAppSelector((state) => state.chat.focused)
   const showChat = useAppSelector((state) => state.chat.showChat)
   const dispatch = useAppDispatch()
+  const userCnt = useAppSelector((state) => state.chat.userCnt)
   const game = phaserGame.scene.keys.game as Game
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -226,7 +227,9 @@ export default function Chat() {
         {showChat ? (
           <>
             <ChatHeader>
-              <h3>대화창 (현재 마을에{ } 명이 있어요)</h3>
+              <h3>대화창 (현재 마을에 {userCnt} 명이 있어요)
+              <button onClick={() => console.log(userCnt)}>닫기</button>
+              </h3>
               <IconButton
                 aria-label="close dialog"
                 className="close"
