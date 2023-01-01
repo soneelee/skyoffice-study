@@ -126,8 +126,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_idle_right',
     frames: anims.generateFrameNames('lucy', {
-      start: 0,
-      end: 5,
+      start: 16,
+      end: 23,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -136,8 +136,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_idle_up',
     frames: anims.generateFrameNames('lucy', {
-      start: 6,
-      end: 11,
+      start: 8,
+      end: 15,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -146,8 +146,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_idle_left',
     frames: anims.generateFrameNames('lucy', {
-      start: 12,
-      end: 17,
+      start: 24,
+      end: 29,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -156,8 +156,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_idle_down',
     frames: anims.generateFrameNames('lucy', {
-      start: 18,
-      end: 23,
+      start: 0,
+      end: 7,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -166,8 +166,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_run_right',
     frames: anims.generateFrameNames('lucy', {
-      start: 24,
-      end: 29,
+      start: 48,
+      end: 52,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -176,8 +176,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_run_up',
     frames: anims.generateFrameNames('lucy', {
-      start: 30,
-      end: 35,
+      start: 40,
+      end: 44,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -186,8 +186,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_run_left',
     frames: anims.generateFrameNames('lucy', {
-      start: 36,
-      end: 41,
+      start: 56,
+      end: 60,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -196,8 +196,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_run_down',
     frames: anims.generateFrameNames('lucy', {
-      start: 42,
-      end: 47,
+      start: 32,
+      end: 36,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -206,8 +206,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_sit_down',
     frames: anims.generateFrameNames('lucy', {
-      start: 48,
-      end: 48,
+      start: 128,
+      end: 128,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -216,8 +216,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_sit_left',
     frames: anims.generateFrameNames('lucy', {
-      start: 49,
-      end: 49,
+      start: 129,
+      end: 129,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -226,8 +226,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_sit_right',
     frames: anims.generateFrameNames('lucy', {
-      start: 50,
-      end: 50,
+      start: 130,
+      end: 130,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -236,8 +236,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'lucy_sit_up',
     frames: anims.generateFrameNames('lucy', {
-      start: 51,
-      end: 51,
+      start: 131,
+      end: 131,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -246,8 +246,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_idle_right',
     frames: anims.generateFrameNames('ash', {
-      start: 0,
-      end: 5,
+      start: 16,
+      end: 23,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -256,8 +256,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_idle_up',
     frames: anims.generateFrameNames('ash', {
-      start: 6,
-      end: 11,
+      start: 8,
+      end: 15,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -266,8 +266,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_idle_left',
     frames: anims.generateFrameNames('ash', {
-      start: 12,
-      end: 17,
+      start: 24,
+      end: 29,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -276,8 +276,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_idle_down',
     frames: anims.generateFrameNames('ash', {
-      start: 18,
-      end: 23,
+      start: 0,
+      end: 7,
     }),
     repeat: -1,
     frameRate: animsFrameRate * 0.6,
@@ -286,8 +286,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_run_right',
     frames: anims.generateFrameNames('ash', {
-      start: 24,
-      end: 29,
+      start: 48,
+      end: 52,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -296,8 +296,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_run_up',
     frames: anims.generateFrameNames('ash', {
-      start: 30,
-      end: 35,
+      start: 40,
+      end: 44,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -306,8 +306,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_run_left',
     frames: anims.generateFrameNames('ash', {
-      start: 36,
-      end: 41,
+      start: 56,
+      end: 60,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -316,8 +316,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_run_down',
     frames: anims.generateFrameNames('ash', {
-      start: 42,
-      end: 47,
+      start: 32,
+      end: 36,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
@@ -326,8 +326,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_sit_down',
     frames: anims.generateFrameNames('ash', {
-      start: 48,
-      end: 48,
+      start: 128,
+      end: 128,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -336,8 +336,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_sit_left',
     frames: anims.generateFrameNames('ash', {
-      start: 49,
-      end: 49,
+      start: 129,
+      end: 129,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -346,8 +346,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_sit_right',
     frames: anims.generateFrameNames('ash', {
-      start: 50,
-      end: 50,
+      start: 130,
+      end: 130,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -356,8 +356,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'ash_sit_up',
     frames: anims.generateFrameNames('ash', {
-      start: 51,
-      end: 51,
+      start: 131,
+      end: 131,
     }),
     repeat: 0,
     frameRate: animsFrameRate,
@@ -416,8 +416,8 @@ export const createCharacterAnims = (anims: Phaser.Animations.AnimationManager) 
   anims.create({
     key: 'adam_run_up',
     frames: anims.generateFrameNames('adam', {
-      start: 8,
-      end: 11,
+      start: 6,
+      end: 8,
     }),
     repeat: -1,
     frameRate: animsFrameRate,
