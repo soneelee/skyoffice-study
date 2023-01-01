@@ -167,7 +167,7 @@ export default function LoginDialog() {
 
   return (
     <Wrapper onSubmit={handleSubmit}>
-      <Title>Joining</Title>
+      <Title>입장하기</Title>
       <RoomName>
         <Avatar style={{ background: getColorByString(roomName) }}>
           {getAvatarString(roomName)}
@@ -179,7 +179,7 @@ export default function LoginDialog() {
       </RoomDescription>
       <Content>
         <Left>
-          <SubTitle>Select an avatar</SubTitle>
+          <SubTitle>어떤 모습으로 들어갈까요</SubTitle>
           <Swiper
             modules={[Navigation]}
             navigation
@@ -200,11 +200,11 @@ export default function LoginDialog() {
           <TextField
             autoFocus
             fullWidth
-            label="Name"
+            label="나의이름"
             variant="outlined"
             color="secondary"
             error={nameFieldEmpty}
-            helperText={nameFieldEmpty && 'Name is required'}
+            helperText={nameFieldEmpty && '이름이 필요해요'}
             onInput={(e) => {
               setName((e.target as HTMLInputElement).value)
             }}
@@ -229,14 +229,14 @@ export default function LoginDialog() {
 
           {videoConnected && (
             <Warning>
-              <Alert variant="outlined">Webcam connected!</Alert>
+              <Alert variant="outlined"> 마이크도 쓸 수 있어요!</Alert>
             </Warning>
           )}
         </Right>
       </Content>
       <Bottom>
         <Button variant="contained" color="secondary" size="large" type="submit">
-          Join
+          친구 만나러 가기
         </Button>
       </Bottom>
     </Wrapper>
