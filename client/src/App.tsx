@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { useAppSelector } from './hooks'
@@ -17,12 +17,40 @@ const Backdrop = styled.div`
   width: 100%;
 `
 
+const UserCntContainer = styled.div`
+  background-color: #fff;
+  max-width: 25%;
+`
+
+// POST 메서드 구현 예제
+async function getData(url = '') {
+  // 옵션 기본 값은 *로 강조
+  const response = await fetch(url, {
+    method: 'GET', // *GET, POST, PUT, DELETE 등
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+  })
+  return response.json()
+}
+
 function App() {
   const loggedIn = useAppSelector((state) => state.user.loggedIn)
   const computerDialogOpen = useAppSelector((state) => state.computer.computerDialogOpen)
   const whiteboardDialogOpen = useAppSelector((state) => state.whiteboard.whiteboardDialogOpen)
   const videoConnected = useAppSelector((state) => state.user.videoConnected)
   const roomJoined = useAppSelector((state) => state.room.roomJoined)
+  const [userCnt, setUserCnt] = useState(0)
+
+  useEffect(() => {
+    getData('http://localhost:2567/api/get/user_cnt').then((data) => {
+      setUserCnt(data?.userCnt || 0)
+    })
+  }, [])
 
   let ui: JSX.Element
   if (loggedIn) {
@@ -36,6 +64,7 @@ function App() {
       ui = (
         /* Render Chat or VideoConnectionDialog if no dialogs are opened. */
         <>
+          <UserCntContainer>전민동에 {userCnt} 명이 접속중이에요</UserCntContainer>
           <Chat />
           {/* Render VideoConnectionDialog if user is not connected to a webcam. */}
           {!videoConnected && <VideoConnectionDialog />}
