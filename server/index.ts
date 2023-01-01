@@ -16,6 +16,23 @@ app.use(cors())
 app.use(express.json())
 // app.use(express.static('dist'))
 
+let userCnt = 0 // TODO: DB 쿼리로 변경
+
+app.get('/api/post/add_user_cnt', (req, res) => {
+  console.log('add_user_cnt', userCnt)
+  userCnt += 1
+  res.status(200).json({
+    message: userCnt,
+  })
+})
+
+app.get('/api/get/get_user_cnt', (req, res) => {
+  console.log('get_user_cnt', userCnt)
+  res.status(200).json({
+    message: userCnt,
+  })
+})
+
 const server = http.createServer(app)
 const gameServer = new Server({
   server,

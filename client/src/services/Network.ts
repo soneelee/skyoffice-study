@@ -20,6 +20,7 @@ import {
   pushPlayerLeftMessage,
 } from '../stores/ChatStore'
 import { setWhiteboardUrls } from '../stores/WhiteboardStore'
+import { response } from 'express'
 
 export default class Network {
   private client: Client
@@ -206,6 +207,7 @@ export default class Network {
   // method to register event listener and call back function when a player joined
   onPlayerJoined(callback: (Player: IPlayer, key: string) => void, context?: any) {
     phaserEvents.on(Event.PLAYER_JOINED, callback, context)
+    console.log('퍼블릭 로비 입장')
   }
 
   // method to register event listener and call back function when a player left
@@ -243,8 +245,13 @@ export default class Network {
 
   // method to send ready-to-connect signal to Colyseus server
   readyToConnect() {
+    console.log('연결중')
     this.room?.send(Message.READY_TO_CONNECT)
     phaserEvents.emit(Event.MY_PLAYER_READY)
+
+    fetch('http://localhost:2567/api/post/add_user_cnt', {}).then((response) => {
+      response.json()
+    })
   }
 
   // method to send ready-to-connect signal to Colyseus server
