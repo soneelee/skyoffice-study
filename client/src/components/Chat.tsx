@@ -226,7 +226,7 @@ export default function Chat() {
         {showChat ? (
           <>
             <ChatHeader>
-              <h3>대화창</h3>
+              <h3>대화창 (현재 마을에{ } 명이 있어요)</h3>
               <IconButton
                 aria-label="close dialog"
                 className="close"
