@@ -34,9 +34,10 @@ export default function VideoConnectionDialog() {
               setConnectionWarning(!connectionWarning)
             }}
           >
-            <AlertTitle>Warning</AlertTitle>
-            No webcam connected
-            <br /> <strong>connect one for full experience!</strong>
+            <AlertTitle> 🤣아차!</AlertTitle>
+             
+             마이크가 연결되지 않았어요
+            <br /> <strong>마이크를 연결하면</strong> 친구들과 대화할 수 있어요
           </Alert>
         )}
         <Button
@@ -47,7 +48,7 @@ export default function VideoConnectionDialog() {
             game.network.webRTC?.getUserMedia()
           }}
         >
-          Connect Webcam
+          마이크 연결하기
         </Button>
       </Wrapper>
     </Backdrop>

@@ -212,8 +212,8 @@ export default function LoginDialog() {
           {!videoConnected && (
             <Warning>
               <Alert variant="outlined" severity="warning">
-                <AlertTitle>Warning</AlertTitle>
-                No webcam/mic connected - <strong>connect one for best experience!</strong>
+                <AlertTitle> 🤣아차! </AlertTitle>
+                마이크가 연결되지 않았어요 <strong>마이크를 연결하면</strong> 친구들과 대화할 수 있어요
               </Alert>
               <Button
                 variant="outlined"
@@ -222,7 +222,7 @@ export default function LoginDialog() {
                   game.network.webRTC?.getUserMedia()
                 }}
               >
-                Connect Webcam
+                마이크 연결하기
               </Button>
             </Warning>
           )}
