@@ -8,15 +8,13 @@ import { RoomType } from '../types/Rooms'
 // import socialRoutes from "@colyseus/social/express"
 
 import { SkyOffice } from './rooms/SkyOffice'
-
+let userCnt = 0;
 const port = Number(process.env.PORT || 2567)
 const app = express()
 
 app.use(cors())
 app.use(express.json())
 // app.use(express.static('dist'))
-
-let userCnt = 0
 
 app.post('/api/post/increase_user_cnt', (req, res) => {
   userCnt += 1

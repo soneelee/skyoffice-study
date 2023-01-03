@@ -16,7 +16,8 @@ import Game from '../scenes/Game'
 
 import { getColorByString } from '../util'
 import { useAppDispatch, useAppSelector } from '../hooks'
-import { MessageType, setFocused, setShowChat, userCntup} from '../stores/ChatStore'
+import { MessageType, setFocused, setShowChat, chatSlice} from '../stores/ChatStore'
+import { roomSlice} from '../stores/RoomStore'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -160,6 +161,20 @@ const Message = ({ chatMessage, messageType }) => {
   )
 }
 
+
+function Showusercnt(){
+  const userCnt_fromserver = useAppSelector((state) => state.room.userCnt)
+  const userCnt_update = useAppSelector((state) => state.chat.userCnt_update)
+  
+  return (
+    <h3>
+      대화창 (현재 마을에 {userCnt_fromserver} 와 {userCnt_update} 명이 있어요)
+      <button onClick={() => console.log(userCnt_fromserver)}>uscnt디버깅</button> 
+    </h3>
+  )
+}
+
+
 export default function Chat() {
   const [inputValue, setInputValue] = useState('')
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
@@ -170,7 +185,7 @@ export default function Chat() {
   const focused = useAppSelector((state) => state.chat.focused)
   const showChat = useAppSelector((state) => state.chat.showChat)
   const dispatch = useAppDispatch()
-  const userCnt = useAppSelector((state) => state.chat.userCnt)
+  const userCnt = useAppSelector((state) => state.room.userCnt)
   const game = phaserGame.scene.keys.game as Game
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -221,30 +236,7 @@ export default function Chat() {
     scrollToBottom()
   }, [chatMessages, showChat])
 
-  // useEffect(() => {}, [userCnt])
-
-  useEffect(() => {
-
-    fetch('http://localhost:2567/api/post/increase_user_cnt',{
-      method: 'POST', // *GET, POST, PUT, DELETE 등
-    })
-    .then((res)=>res.json())
-    .then((data)=>{
-      console.log('data', data)
-      dispatch(userCntup())
-
-      
-
-    })
-    .catch((err)=>console.log(err))
-    // (async function postData() {
-    //   await fetch('http://localhost:2567/api/post/increase_user_cnt')
-    // })()
-
-
-  }, [])
-
-  
+  // useEffect(() => {}, [userCnt]) 
 
   return (
     <Backdrop>
@@ -252,11 +244,7 @@ export default function Chat() {
         {showChat ? (
           <>
             <ChatHeader>
-              <h3>대화창 (현재 마을에 {userCnt} 명이 있어요)
-              <button onClick={() => console.log(userCnt)}>닫기</button>
-
-              
-              </h3>
+              <Showusercnt />
               <IconButton
                 aria-label="close dialog"
                 className="close"

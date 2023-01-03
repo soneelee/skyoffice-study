@@ -3,6 +3,7 @@ import { IChatMessage } from '../../../types/IOfficeState'
 import phaserGame from '../PhaserGame'
 import Game from '../scenes/Game'
 
+
 export enum MessageType {
   PLAYER_JOINED,
   PLAYER_LEFT,
@@ -15,20 +16,20 @@ export const chatSlice = createSlice({
     chatMessages: new Array<{ messageType: MessageType; chatMessage: IChatMessage }>(),
     focused: false,
     showChat: true,
-    userCnt: 1,
+    userCnt_update: 0,
   },
   reducers: {
 
     userCntup: (state) => {
       // fetch 업
-      // state.userCnt += 1
+      state.userCnt_update += 1
       // get함수 땡겨서 업데이트
       console.log("up")
     },
 
     userCntdown: (state) => {
       // fetch 다운
-      state.userCnt -= 1
+      state.userCnt_update -= 1
       console.log("down")
       // get함수 호출
     },

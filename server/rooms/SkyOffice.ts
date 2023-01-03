@@ -17,18 +17,20 @@ import {
 } from './commands/WhiteboardUpdateArrayCommand'
 import ChatMessageUpdateCommand from './commands/ChatMessageUpdateCommand'
 
+export let userCnt:number = 0;
+
 export class SkyOffice extends Room<OfficeState> {
   private dispatcher = new Dispatcher(this)
   private name: string
   private description: string
   private password: string | null = null
-
+  
   async onCreate(options: IRoomData) {
     const { name, description, password, autoDispose } = options
     this.name = name
     this.description = description
     this.autoDispose = autoDispose
-
+    
     let hasPassword = false
     if (password) {
       const salt = await bcrypt.genSalt(10)
@@ -38,12 +40,12 @@ export class SkyOffice extends Room<OfficeState> {
     this.setMetadata({ name, description, hasPassword })
 
     this.setState(new OfficeState())
-
+    
     // HARD-CODED: Add 5 computers in a room
     for (let i = 0; i < 5; i++) {
       this.state.computers.set(String(i), new Computer())
     }
-
+    
     // HARD-CODED: Add 3 whiteboards in a room
     for (let i = 0; i < 3; i++) {
       this.state.whiteboards.set(String(i), new Whiteboard())
@@ -167,11 +169,15 @@ export class SkyOffice extends Room<OfficeState> {
 
   onJoin(client: Client, options: any) {
     this.state.players.set(client.sessionId, new Player())
+    userCnt += 1
     client.send(Message.SEND_ROOM_DATA, {
       id: this.roomId,
       name: this.name,
       description: this.description,
+      userCnt: userCnt,
     })
+    
+    console.log("=====client joined", client.sessionId)
   }
 
   onLeave(client: Client, consented: boolean) {
@@ -188,6 +194,8 @@ export class SkyOffice extends Room<OfficeState> {
         whiteboard.connectedUser.delete(client.sessionId)
       }
     })
+    userCnt -= 1
+    console.log("=====client leaved", client.sessionId)
   }
 
   onDispose() {
