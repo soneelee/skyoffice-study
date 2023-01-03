@@ -16,7 +16,7 @@ import Game from '../scenes/Game'
 
 import { getColorByString } from '../util'
 import { useAppDispatch, useAppSelector } from '../hooks'
-import { MessageType, setFocused, setShowChat} from '../stores/ChatStore'
+import { MessageType, setFocused, setShowChat, userCntup} from '../stores/ChatStore'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -221,6 +221,31 @@ export default function Chat() {
     scrollToBottom()
   }, [chatMessages, showChat])
 
+  // useEffect(() => {}, [userCnt])
+
+  useEffect(() => {
+
+    fetch('http://localhost:2567/api/post/increase_user_cnt',{
+      method: 'POST', // *GET, POST, PUT, DELETE 등
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+      console.log('data', data)
+      dispatch(userCntup())
+
+      
+
+    })
+    .catch((err)=>console.log(err))
+    // (async function postData() {
+    //   await fetch('http://localhost:2567/api/post/increase_user_cnt')
+    // })()
+
+
+  }, [])
+
+  
+
   return (
     <Backdrop>
       <Wrapper>
@@ -229,6 +254,8 @@ export default function Chat() {
             <ChatHeader>
               <h3>대화창 (현재 마을에 {userCnt} 명이 있어요)
               <button onClick={() => console.log(userCnt)}>닫기</button>
+
+              
               </h3>
               <IconButton
                 aria-label="close dialog"
